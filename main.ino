@@ -11,5 +11,4 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   forward_trace(1);
-  
 }
