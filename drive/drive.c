@@ -1,5 +1,4 @@
 void motorinit(){
-	//电机初始化函数 
   digitalWrite(46, HIGH);
   digitalWrite(47, HIGH);
   digitalWrite(48, HIGH);
@@ -11,7 +10,6 @@ void motorinit(){
 }
 
 void motorforward(int t){
-	//小车向前移动t时间 
   digitalWrite(47, LOW);
   digitalWrite(49, LOW);
   digitalWrite(53, LOW);
@@ -24,7 +22,6 @@ void motorforward(int t){
 }
 
 void motorbackward(int t){
-	//小车向后移动t时间 
   digitalWrite(46, LOW);
   digitalWrite(48, LOW);
   digitalWrite(52, LOW);
@@ -36,20 +33,19 @@ void motorbackward(int t){
   digitalWrite(50, HIGH);
 }
 
-void motorleftward(int t){
-	//小车向左平移t时间 
+void motorleftward(int t){ 
 	int i = t*100;
 	while(i--){
 		digitalWrite(46, LOW);
 	 	digitalWrite(49, LOW);
 	  	digitalWrite(53, LOW);
 	  	digitalWrite(50, LOW);  
-	  	delayMircoseconds(600);
+	  	delayMicroseconds(600);
 	  	digitalWrite(46, LOW);
 	 	digitalWrite(49, LOW);
 	  	digitalWrite(53, LOW);
 	  	digitalWrite(50, LOW);  
-	  	delayMircoseconds(400);
+	  	delayMicroseconds(400);
 	}
     digitalWrite(46, HIGH);
 	digitalWrite(49, HIGH);
@@ -58,7 +54,6 @@ void motorleftward(int t){
 }
 
 void motorrightward(int t){
-	//小车向右平移t时间 
   digitalWrite(47, LOW);
   digitalWrite(48, LOW);
   digitalWrite(52, LOW);
@@ -71,8 +66,6 @@ void motorrightward(int t){
 }
 
 void selfturn(char dir,int t){
-	//小车原地转，dir控制转动方向，t控制转动时间
-	//dir == u 时为逆时针 
   if(dir == 'u'){
       digitalWrite(47, LOW);
       digitalWrite(48, LOW);
