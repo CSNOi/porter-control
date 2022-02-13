@@ -3,7 +3,6 @@ int coding_sensor(int f1=0,int f2=0,int f3=0,int f4=0,int f5=0,int f6=0,int f7=0
 }
 
 void forward_trace(int num){
-	//前灰度卡循迹，num为停止的十字数 
   int f2 = 0;
   int f4 = 0;
   int f5 = 0;
@@ -72,9 +71,8 @@ void forward_trace(int num){
 }
 
 void turn_right(){
-	//自校准顺时针对正第一个黑线 
 	int f4 = 0;
-	flag = 1;
+	int flag = 1;
 	while(flag){
 		f4 = digitalRead(22);
 		if(f4 == 1){
@@ -82,7 +80,7 @@ void turn_right(){
     	  	digitalWrite(49, LOW);
    	 	    digitalWrite(52, LOW);
       		digitalWrite(51, LOW);  
-      		delayMircoseconds(500);
+      		delayMicroseconds(500);
 		}
 		else{
 			flag = 0;
@@ -91,22 +89,21 @@ void turn_right(){
    		    digitalWrite(52, HIGH);
       		digitalWrite(51, HIGH);
 		}
-		delayMircoseconds(500);
+		delayMicroseconds(500);
 	}
 } 
 
 void turn_left(){
-	//自校准逆时针对正第一个黑线 
 	int f5 = 0;
-	flag = 1;
+	int flag = 1;
 	while(flag){
 		f5 = digitalRead(23);
-		if(f4 == 1){
+		if(f5 == 1){
       		digitalWrite(47, LOW);
    	   		digitalWrite(48, LOW);
       		digitalWrite(53, LOW);
       		digitalWrite(50, LOW); 
-      		delayMircoseconds(500);
+      		delayMicroseconds(500);
 		}
 		else{
 			flag = 0;
@@ -115,6 +112,6 @@ void turn_left(){
       		digitalWrite(53, HIGH);
      		digitalWrite(50, HIGH);
 		}
-		delayMircoseconds(500);
+		delayMicroseconds(500);
 	}
 }
